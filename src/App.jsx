@@ -14,6 +14,7 @@ export default App;
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  max-width: 768px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -24,9 +24,16 @@ function createCSS() {
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vw;
+  height: fit-content;
+  max-width: 768px;
+  max-height: 768px;
+  margin: auto;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .circle {
     position: relative;
     padding: 0;
@@ -93,24 +100,20 @@ export const Container = styled.div`
   ${createCSS()};
 
   .arrow {
-    position: absolute;
-    z-index: 102;
-    top: -2%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50px;
-    width: 50px;
+    height: 2em;
+    width: 2em;
     margin: auto;
+    position: absolute;
+    top: 10%;
+    z-index: 100;
     /* opacity: 0.4; */
   }
 
   .spinner {
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(30deg);
     margin: auto;
+    margin-top: 0;
+    height: 140%;
+    width: 100%;
     /* opacity: 0.4; */
   }
 
