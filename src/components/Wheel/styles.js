@@ -112,8 +112,7 @@ export const Container = styled.div`
   .spinner {
     margin: auto;
     margin-top: 0;
-    height: 140%;
-    width: 100%;
+    transform: rotate(130deg);
     /* opacity: 0.4; */
   }
 
