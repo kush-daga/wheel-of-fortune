@@ -45,38 +45,6 @@ export const Container = styled.div`
     overflow: hidden;
   }
 
-  .circle.animate {
-    -webkit-animation: spin ${({ speed }) => `${speed / 10}s`} linear;
-    animation: spin ${({ speed }) => `${speed / 10}s`} linear;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-    }
-    10% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-    20% {
-      -webkit-transform: rotate(720deg);
-      transform: rotate(720deg);
-    }
-    40% {
-      -webkit-transform: rotate(1080deg);
-      transform: rotate(1080deg);
-    }
-    70% {
-      -webkit-transform: rotate(1440deg);
-      transform: rotate(1440deg);
-    }
-    100% {
-      -webkit-transform: rotate(1800deg);
-      transform: rotate(1800deg);
-    }
-  }
-
   li {
     overflow: hidden;
     position: absolute;
@@ -116,35 +84,11 @@ export const Container = styled.div`
     /* opacity: 0.4; */
   }
 
-  .spinner.animate {
-    -webkit-animation: spin ${({ speed }) => `${speed / 10}s`} linear;
-    animation: spinImg ${({ speed }) => `${speed / 10}s`} linear;
-  }
-
-  @keyframes spinImg {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-      -webkit-transform: translate(-50%, -50%) rotate(0deg);
-    }
-    10% {
-      -webkit-transform: translate(-50%, -50%) rotate(360deg);
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-    20% {
-      -webkit-transform: translate(-50%, -50%) rotate(720deg);
-      transform: translate(-50%, -50%) rotate(720deg);
-    }
-    40% {
-      -webkit-transform: translate(-50%, -50%) rotate(1080deg);
-      transform: translate(-50%, -50%) rotate(1080deg);
-    }
-    70% {
-      -webkit-transform: translate(-50%, -50%) rotate(1440deg);
-      transform: translate(-50%, -50%) rotate(1440deg);
-    }
-    100% {
-      -webkit-transform: translate(-50%, -50%) rotate(1800deg);
-      transform: translate(-50%, -50%) rotate(1800deg);
-    }
+  #interaction {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
   }
 `;
