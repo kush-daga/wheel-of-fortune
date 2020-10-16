@@ -45,7 +45,7 @@ export const addScoreToGSheets = async (index) => {
           return response.json();
         })
         .then((json) => {
-          console.log(json);
+          console.log("Response", json);
           // window.location.reload();
         });
     }
