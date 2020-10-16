@@ -19,7 +19,7 @@ export default App;
 const Container = styled.div`
   width: 100vw;
   height: fit-content;
-  max-width: 500px;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;

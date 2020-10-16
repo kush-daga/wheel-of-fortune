@@ -93,7 +93,7 @@ export default function Wheel() {
   };
 
   return (
-    <Container speed={Math.floor(Math.random() * (100 - 50 + 1)) + 50}>
+    <Container>
       <motion.object type="image/svg+xml" data={arrow} className="arrow">
         Arrow
       </motion.object>
