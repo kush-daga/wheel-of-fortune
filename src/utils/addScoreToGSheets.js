@@ -5,6 +5,7 @@ export const addScoreToGSheets = async (index) => {
   console.log(
     "new",
     doc,
+    typeof process.env.REACT_APP_GOOGLE_PRIVATE_KEY,
     process.env.REACT_APP_GOOGLE_PRIVATE_KEY,
     process.env.REACT_APP_GOOGLE_CLIENT_EMAIL
   );
