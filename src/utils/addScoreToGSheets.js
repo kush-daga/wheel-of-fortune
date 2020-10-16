@@ -18,6 +18,7 @@ export const addScoreToGSheets = async (index) => {
           console.log("Working");
         }
       );
+      // throw new Error("Erro");
       await doc.loadInfo();
       const sheet = doc.sheetsByIndex[0];
       console.log("Sheedsdt", sheet);
@@ -29,7 +30,14 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      window.location.reload();
+      fetch(process.env.REACT_APP_BACKEND_URI, {
+        method: "POST",
+        headers: { "Content-Type": "Application/json" },
+        body: JSON.stringify({
+          index: index,
+        }),
+      }).then((res) => console.log(res));
+      // window.location.reload();
     }
   } else {
     alert("Env variables not set");
