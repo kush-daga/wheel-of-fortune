@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+//Fonts
+import "./fonts/metropolis/Metropolis-Regular.otf";
+
 import App from "./App.jsx";
 import * as serviceWorker from "./serviceWorker";
 
