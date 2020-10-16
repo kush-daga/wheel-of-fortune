@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container } from "./styles";
+import { Container, ProgressBar, ProgressContainer, Threshold } from "./styles";
 import spinner from "../../assets/spinner.svg";
 import arrow from "../../assets/arrow.svg";
 import { motion } from "framer-motion";
@@ -38,7 +38,7 @@ export default function Wheel() {
   const [currentAngle, setCurrentAngle] = useState(0);
   const spinnerRef = useRef(null);
   const interactionRef = useRef(null);
-
+  const [text, setText] = useState("Spin");
   useEffect(() => {
     console.log(rotate);
     const normalizedAngle = parseInt(rotate) + 30;
@@ -49,7 +49,6 @@ export default function Wheel() {
       setTimeout(() => {
         alert("You won - " + prizes[index].text);
         addScoreToGSheets(index);
-        // window.location.reload();
       }, 3000);
     }
   }, [rotate]);
@@ -68,9 +67,11 @@ export default function Wheel() {
             "rotate(" + tempCurrentAngle + "deg)";
           if (tempCurrentAngle < -360 && !flag) {
             flag = true;
+            setText("Will spin automatically in 3s");
             setTimeout(() => {
               region.unbind(interactionRef.current, "rotate");
               animateSpinner(tempCurrentAngle);
+
               console.log("unbinded", tempCurrentAngle);
             }, 3000);
           }
@@ -102,12 +103,29 @@ export default function Wheel() {
         ref={spinnerRef}
         animate={{ rotate: rotate, transition: { duration: 2 } }}
         className="spinner"
-        height="140%"
+        height="100%"
       >
         Spinner
       </motion.object>
+      <ProgressContainer>
+        <ProgressBar>
+          <div style={{ width: `${(currentAngle * -1) / 15}%` }}></div>
+        </ProgressBar>
+        <Threshold></Threshold>
+      </ProgressContainer>
+
+      <svg height="0" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="clip" height="100px" width="100px">
+            <path
+              d="M130.5 8.5C66.5 30.5 17.3333 12.3333 0 2.5C26 35.7 101.5 32.8333 136 23L140.5 31L161 2.5L126 0L130.5 8.5Z"
+              fill="#BBBBBB"
+            />
+          </clipPath>
+        </defs>
+      </svg>
       <button style={{ zIndex: 10000 }} onClick={animateSpinner}>
-        Spin
+        {text}
       </button>
       <div id="interaction" ref={interactionRef}></div>
     </Container>

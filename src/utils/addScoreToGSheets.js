@@ -13,5 +13,6 @@ export const addScoreToGSheets = async (index) => {
     timestamp: Date.now(),
     spin_result_index: index,
   });
+  window.location.reload();
   //   console.log(sheet);
 };
