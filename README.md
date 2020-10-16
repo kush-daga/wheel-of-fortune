@@ -9,3 +9,15 @@ A wheel of fortune spinner game that can be installed as a PWA on your phones. U
 ### Spreadsheet data
 
 ![image](./src/assets/2020-10-16_18-33.png)
+
+## PWA - Lighthouse Report
+
+![image](./src/assets/lighthouse.png)
+
+## Main Screen
+
+![image](./src/assets/main-screen.png)
+
+## Rotation
+
+![image](./src/assets/rotation.png)
