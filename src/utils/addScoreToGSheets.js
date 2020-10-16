@@ -29,7 +29,25 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      window.location.reload();
+      fetch("https://sheetsu.com/apis/v1.0bu/483a6b5a2761", {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          web_client: "kushdaga pwa",
+          timestamp: Date.now(),
+          spin_result_index: index,
+        }),
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          console.log(json);
+          window.location.reload();
+        });
     }
   } else {
     alert("Env variables not set");
