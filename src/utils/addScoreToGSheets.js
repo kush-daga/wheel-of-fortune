@@ -10,7 +10,7 @@ export const addScoreToGSheets = async (index) => {
   console.log(doc);
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
-
+  console.log(sheet);
   await sheet.addRow({
     web_client: "kushdaga pwa",
     timestamp: Date.now(),
