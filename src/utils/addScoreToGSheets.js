@@ -21,10 +21,10 @@ export const addScoreToGSheets = async (index) => {
       timestamp: Date.now(),
       spin_result_index: index,
     });
-    // window.location.reload();
+    window.location.reload();
   } catch (err) {
     console.log("Errror", err);
-    window.location.reload();
+    // window.location.reload();
   }
 
   //   console.log(sheet);
