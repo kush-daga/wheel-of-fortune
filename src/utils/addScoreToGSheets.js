@@ -29,25 +29,7 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      fetch(process.env.REACT_APP_SHEETSU_URL, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          web_client: "kushdaga pwa",
-          timestamp: Date.now(),
-          spin_result_index: index,
-        }),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((json) => {
-          console.log("Response", json);
-          // window.location.reload();
-        });
+      window.location.reload();
     }
   } else {
     alert("Env variables not set");
