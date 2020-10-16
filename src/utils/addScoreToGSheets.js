@@ -33,13 +33,7 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      fetch(process.env.REACT_APP_BACKEND_URI, {
-        method: "POST",
-        headers: { "Content-Type": "Application/json" },
-        body: JSON.stringify({
-          index: index,
-        }),
-      }).then((res) => window.location.reload());
+      window.location.reload();
     }
   } else {
     alert("Env variables not set");
