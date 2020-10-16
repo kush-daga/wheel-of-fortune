@@ -35,6 +35,12 @@ export const Container = styled.div`
     width: 100%;
     z-index: 100;
   }
+  button {
+    border: none;
+    background: #fab821;
+    padding: 10px 20px;
+    color: white;
+  }
 `;
 
 export const ProgressBar = styled.div`
