@@ -19,9 +19,10 @@ export default App;
 const Container = styled.div`
   width: 100vw;
   height: fit-content;
-  max-width: 768px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
   justify-content: space-between;
 `;
