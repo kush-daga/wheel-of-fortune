@@ -3,7 +3,8 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 export const addScoreToGSheets = async (index) => {
   if (
     process.env.REACT_APP_GOOGLE_CLIENT_EMAIL &&
-    process.env.REACT_APP_GOOGLE_PRIVATE_KEY
+    process.env.REACT_APP_GOOGLE_PRIVATE_KEY &&
+    process.env.REACT_APP_SPREADSHEET_ID
   ) {
     try {
       const doc = new GoogleSpreadsheet(process.env.REACT_APP_SPREADSHEET_ID);
