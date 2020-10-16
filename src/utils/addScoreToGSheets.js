@@ -29,7 +29,7 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      // window.location.reload();
+      window.location.reload();
     }
   } else {
     alert("Env variables not set");
