@@ -2,7 +2,12 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 
 export const addScoreToGSheets = async (index) => {
   const doc = new GoogleSpreadsheet(process.env.REACT_APP_SPREADSHEET_ID);
-  console.log("new", doc);
+  console.log(
+    "new",
+    doc,
+    process.env.REACT_APP_GOOGLE_PRIVATE_KEY,
+    process.env.REACT_APP_GOOGLE_CLIENT_EMAIL
+  );
   await doc.useServiceAccountAuth({
     client_email: process.env.REACT_APP_GOOGLE_CLIENT_EMAIL,
     private_key: process.env.REACT_APP_GOOGLE_PRIVATE_KEY,
