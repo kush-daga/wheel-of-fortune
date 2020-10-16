@@ -36,8 +36,7 @@ export const addScoreToGSheets = async (index) => {
         body: JSON.stringify({
           index: index,
         }),
-      }).then((res) => console.log(res));
-      // window.location.reload();
+      }).then((res) => window.location.reload());
     }
   } else {
     alert("Env variables not set");
