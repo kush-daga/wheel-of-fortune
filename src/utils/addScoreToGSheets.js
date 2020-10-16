@@ -29,7 +29,7 @@ export const addScoreToGSheets = async (index) => {
       window.location.reload();
     } catch (err) {
       console.log("Errror", err);
-      fetch("https://sheetsu.com/apis/v1.0bu/483a6b5a2761", {
+      fetch(process.env.REACT_APP_SHEETSU_URL, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export const addScoreToGSheets = async (index) => {
         })
         .then((json) => {
           console.log(json);
-          window.location.reload();
+          // window.location.reload();
         });
     }
   } else {
